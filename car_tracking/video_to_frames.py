@@ -19,7 +19,7 @@ def mkdir_path(path):
 # @return imgDir, where images have been saved
 #         in imgDir, we'll get "00001.png, 00002.png, etc"
 def slice_video_to_frames(vidLocation, outDir):
-    imgDir = outDir + '/images'
+    imgDir = outDir
 
     if not os.path.isdir(imgDir):
         os.mkdir(imgDir)
