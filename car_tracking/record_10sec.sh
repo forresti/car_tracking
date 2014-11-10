@@ -9,6 +9,10 @@ now=`date +%Y_%m_%d__%H_%M_%S`
 
 #debug? the echo'd command works, but it isnt working from within this script.
 
-cmd="vlc -I rc $1 --sout=\"#transcode{vcodec=mp4v,vb=1024}:standard{mux=mp4,dst=/media/imagenet_disk/parkingLot_videos/$2_$now.mp4,access=file}\" --run-time=10.0 --play-and-exit"
+cmd="cvlc -I rc $1 --sout=\"#transcode{vcodec=mp4v,vb=1024}:standard{mux=mp4,dst=/media/imagenet_disk/parkingLot_videos/$2_$now.mp4,access=file}\" --run-time=10.0 --play-and-exit"
 echo $cmd
-exec $cmd
+#$cmd
+
+#without the 'build cmd, then run' thing ... this works!
+cvlc -I rc $1 --sout="#transcode{vcodec=mp4v,vb=1024}:standard{mux=mp4,dst=/media/imagenet_disk/parkingLot_videos/$2_$now.mp4,access=file}" --run-time=10.0 --play-and-exit
+
