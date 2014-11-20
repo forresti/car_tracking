@@ -11,7 +11,9 @@ from subprocess import call
 def recordOneVideo(url, name):
     now = time.strftime("%a_%d_%b_%Y__%H_%M_%S")
 
-    cmd='DISPLAY=:0.0 cvlc -I dummy \"' + url + '\" --sout="#transcode{vcodec=mp4v,vb=1024}:standard{mux=mp4,dst=/media/imagenet_disk/parkingLot_videos/' + name +'_' + now +'.mp4,access=file}" --run-time=10.0 --play-and-exit'.decode('utf-8')
+    cmd='DISPLAY=:0.0 cvlc -I dummy \"' + url + '\" --sout="#transcode{vcodec=wmv2,vb=2048}:standard{mux=asf,dst=/media/imagenet_disk/parkingLot_videos/' + name +'_' + now +'.asf,access=file}" --run-time=10.0 --play-and-exit'.decode('utf-8')
+
+    #cmd='DISPLAY=:0.0 cvlc -I dummy \"' + url + '\" --sout="#transcode{vcodec=mp4v,vb=2048}:standard{mux=mp4,dst=/media/imagenet_disk/parkingLot_videos/' + name +'_' + now +'.mp4,access=file}" --run-time=10.0 --play-and-exit'.decode('utf-8')
 
     print cmd
     call(cmd, shell=True)

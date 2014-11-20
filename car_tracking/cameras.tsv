@@ -7,7 +7,7 @@ http://195.67.26.73/mjpg/video.mjpg sweden
 http://194.105.250.197/mjpg/video.mjpg  iceland
 http://69.68.89.222:1013/mjpg/video.mjpg    willamston_us
 http://142.35.194.99/mjpg/video.mjpg    chilliwack_canada
-http://144.39.151.199/mjpg/video.mjpg   usu_eastern_price
+http://144.39.151.199/mjpg/video.mjpg   usu_eastern_blanding
 http://108.58.154.186/mjpg/video.mjpg   axis_P3343
 http://193.213.13.69/mjpg/video.mjpg    norway_ferry
 http://128.193.182.25/mjpg/video.mjpg   oregon_state
@@ -34,9 +34,9 @@ http://wc2.dartmouth.edu/mjpg/video.mjpg    dartmouth
 http://173.15.200.53/axis-cgi/mjpg/video.cgi    virginia_royal_oak
 http://cam98462.miemasu.net/nphMotionJpeg?Resolution=640x480&Quality=Standard   crystal_view_hotel_japan
 http://199.48.198.27/axis-cgi/mjpg/video.cgi?resolution=800x450&dummy=1414897322878 bellingham_WA
-http://202.142.12.32/nphMotionJpeg?Resolution=640x480&Quality=Clarity   okayama_japan
+http://202.142.12.32/nphMotionJpeg?Resolution=640x480&Quality=Clarity   okayama_japan_closeUp
 http://220.157.184.198:60001/nphMotionJpeg?resolution=640x480   asahi_japan_shallow_angle
-http://202.142.10.11/-wvhttp-01-/GetOneShot?frame_count=no_limit    okayama_jaoan
+http://202.142.10.11/-wvhttp-01-/GetOneShot?frame_count=no_limit    okayama_japan_zoomOut
 http://220.254.6.135/-wvhttp-01-/getoneshot?camera_id=1&frame_count=no_limit    nagano_japan
 http://61.7.96.32/-wvhttp-01-/getoneshot?camera_id=1&frame_count=no_limit   genki_chi_japan
 http://constructioncam.winthrop.edu/axis-cgi/mjpg/video.cgi?camera=&resolution=704x480  winthrop_univ_SC
@@ -55,3 +55,7 @@ http://194.105.250.197/axis-cgi/mjpg/video.cgi  borgarfjord_iceland
 http://skycam.sandwell.ac.uk/cgi-bin/faststream.jpg?stream=full&fps=0   sandwell_UK
 http://174.79.96.147/axis-cgi/mjpg/video.cgi    van_buren_AR
 http://71.35.77.53:46005/mjpg/video.mjpg    arizona_driveway
+http://217.7.233.140/cgi-bin/faststream.jpg?stream=full&fps=0   ottobeuren_abbey
+http://149.84.160.211/axis-cgi/mjpg/video.cgi?resolution=704x480&dummy=garb alfred_univ_NY
+http://myndavel.ma.is/mjpg/video.mjpg   akureyri_iceland
+http://193.231.246.7/mjpg/video.mjpg    alba_romania
