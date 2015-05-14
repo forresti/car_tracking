@@ -11,16 +11,18 @@ from subprocess import call
 def recordOneVideo(url, name):
     now = time.strftime("%a_%d_%b_%Y__%H_%M_%S")
 
-    cmd='DISPLAY=:0.0 cvlc -I dummy \"' + url + '\" --sout="#transcode{vcodec=wmv2,vb=2048}:standard{mux=asf,dst=/media/imagenet_disk/parkingLot_videos/' + name +'_' + now +'.asf,access=file}" --run-time=10.0 --play-and-exit'.decode('utf-8')
+    #cmd='DISPLAY=:0.0 cvlc -I dummy \"' + url + '\" --sout="#transcode{vcodec=wmv2,vb=2048}:standard{mux=asf,dst=/media/imagenet_disk/parkingLot_videos/' + name +'_' + now +'.asf,access=file}" --run-time=10.0 --play-and-exit'.decode('utf-8') #11/20/14
 
-    #cmd='DISPLAY=:0.0 cvlc -I dummy \"' + url + '\" --sout="#transcode{vcodec=mp4v,vb=2048}:standard{mux=mp4,dst=/media/imagenet_disk/parkingLot_videos/' + name +'_' + now +'.mp4,access=file}" --run-time=10.0 --play-and-exit'.decode('utf-8')
+    #cmd='DISPLAY=:0.0 cvlc -I dummy \"' + url + '\" --sout="#transcode{vcodec=mp4v,vb=2048}:standard{mux=mp4,dst=/media/imagenet_disk/parkingLot_videos/' + name +'_' + now +'.mp4,access=file}" --run-time=10.0 --play-and-exit'.decode('utf-8') #11/11/14 (originally vb=1024)
+
+    cmd='DISPLAY=:0.0 cvlc -I dummy \"' + url + '\" --sout="#transcode{vcodec=mp4v,vb=4096}:standard{mux=mp4,dst=/media/forrest/imagenet_disk/parkingLot_videos/' + name +'_' + now +'.mp4,access=file}" --run-time=30.0 --play-and-exit'.decode('utf-8') #11/24/14 (vb=4096)
 
     print cmd
     call(cmd, shell=True)
 
 def read_camera_list():
     cameraList = []
-    fname = '/home/forrest/car_tracking/cameras.tsv'
+    fname = '/media/forrest/imagenet_disk/car_tracking/cameras.tsv'
     f = open(fname)
     line = f.readline()
     while(line):
