@@ -8,13 +8,14 @@ def read_bboxes(boxF):
     line = f.readline()
     while line:
         #'lost' = outside of view screen (don't draw)
-        [objID, x1, y1, x2, y2, frameID, lost,  
+        [objID, x1, y1, x2, y2, frameID, lost, 
                 occluded, generated, category] = line.split(' ')
 
-        box_dict = {'objID':int(objID), 'xmin':int(x1), 'xmax':int(x2), 
-                    'ymin':int(x1), 'ymax':int(x2), 'frameID':int(frameID), 
-                    'lost':int(lost), 'occluded':int(occluded), 'generated':int(generated),
-                    'category':category.strip()}
+        box_dict = {'objID':int(objID), 
+                    'xmin':int(x1), 'xmax':int(x2), 
+                    'ymin':int(y1), 'ymax':int(y2), 
+                    'frameID':int(frameID), 'lost':int(lost), 'occluded':int(occluded), 
+                    'generated':int(generated), 'category':category.strip()}
         boxes.append(box_dict) 
         line = f.readline()
     f.close()
