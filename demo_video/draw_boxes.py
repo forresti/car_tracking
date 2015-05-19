@@ -50,11 +50,11 @@ def draw_timer(img, box_dict, curr_minute):
     if curr_minute < 60:
         color = (255,255,255)
     else: #YOU PARKED TOO LONG!
-        color = (0,0,255) #RED
+        color = (102,102,255) #RED
 
     font = cv2.FONT_HERSHEY_SIMPLEX
     string = '%d min' %curr_minute
-    fontScale = 0.3
+    fontScale = 0.25
     thickness = 1
     textSz = cv2.getTextSize(string, font, fontScale, thickness)
     textW = textSz[0][0]
@@ -98,14 +98,19 @@ if __name__ == "__main__":
     boxF = 'boxes_bradley_univ_90min.txt' #from vatic
     fps = 1 #annotation frequency (only used if drawing on original video)
     imgDir = '/home/forrest/installers/vatic/public/frames/bradley_univ_90min' #vatic'd frames
+    outVid = './bradley_univ_90min_annotated.avi'
 
     boxes = read_bboxes(boxF)
     frame_list = get_frame_ID_list(boxes)
     first_frames = get_first_frames(boxes) 
     print "got first frames per box"
 
+    fourcc = cv2.cv.CV_FOURCC(*'XVID') #codec
+    output_fps = 25 #time lapse
+    writer = cv2.VideoWriter(outVid, fourcc, output_fps, (640,480), 1)
+
     #0, 1, 2, ... 5400
-    for frameID in frame_list[4000:5100:10]:
+    for frameID in frame_list:
 
         subdir = frameID / 100 #int division
         #imgF = '/Users/forrest/computerVision/0.jpg' 
@@ -127,9 +132,14 @@ if __name__ == "__main__":
             #draw_box(img, b) #TODO: need to return img or not?
             #TODO: annotate timer on each box
 
+
+        writer.write(img)
+        '''
         cv2.namedWindow("preview")
         cv2.imshow("preview", img)
         cv2.waitKey(0) #you have to have the window in focus for it to listen (any key -> exit)
+        '''
 
-
+        
+    writer.release()
 
